@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>Something went wrong (500)</h1>
+                <p>We're experiencing some trouble on our end. Please try again later</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="div-pnf">
+                    <img class="server-error" src="{{url_for('static',filename='svg/undraw_server_down_s4lk.svg')}}">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

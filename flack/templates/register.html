@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="row">
+        <div class="col-lg-6 col-md-12 hide-img">
+            <div class="loginImg">
+                <h2 class="login-text">Register here</h2>
+                <img class="registersvg rotate" src="{{ url_for('static', filename='svg/drawkit-content-man-colour.svg') }}">
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-12">
+           <div class="container login-con">
+                <div class="login-form">
+                    <form method="POST" action="">
+                        {{ form.hidden_tag() }}
+                        <div class="logo-div hide-logo">
+                            <img class="login-logo" src="{{url_for('static',filename='assets/biglogo.png')}}">
+                        </div>
+                        <fieldset class="form-group">
+                            <h2 class="mb-4 login-head">Welcome To Flack</h2>
+                            <p class="text-muted ">welcome, please fill the form to register</p>
+                            <div class="form-group">
+                                {{ form.email.label(class="form-control-label") }}
+                                {{ form.email(class="form-control form-control-lg") }}
+                            </div>
+                            <div class="form-group">
+                                {{ form.password.label(class="form-control-label") }}
+                                {{ form.password(class="form-control form-control-lg") }}
+                            </div>
+                            <div class="form-group">
+                                {{ form.confirm_password.label(class="form-control-label") }}
+                                {{ form.confirm_password(class="form-control form-control-lg") }}
+                            </div>
+
+                        </fieldset>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-4 btn-div">
+                                    {{ form.submit(class="btn btn-primary btn-lg btn-block transform") }}
+                                </div>
+                                <div class="col-4 btn-div">
+                                    <a href="{{ url_for('login') }}" class="btn btn-outline-primary btn-lg btn-block transform">Login</a>
+                                </div>
+                                <div class="col"></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

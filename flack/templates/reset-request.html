@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="row">
+        <div class="col-lg-6 col-md-12 hide-img">
+            <div class="loginImg">
+                <img class="resetsvg" src="{{ url_for('static', filename='svg/undraw_forgot_password_gi2d.svg') }}">
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-12">
+           <div class="container login-con">
+                <div class="login-form">
+                    <form method="POST" action="">
+                        {{ form.hidden_tag() }}
+                        <div class="logo-div hide-logo">
+                            <img class="login-logo" src="{{url_for('static',filename='assets/biglogo.png')}}">
+                        </div>
+                        <fieldset class="form-group">
+                            <h1 class="mb-4 login-head">Forgot Password?</h1>
+                            <p class="">Please, insert your email to get a password reset link</p>
+                            <div class="form-group">
+                                {{ form.email.label(class="form-control-label") }}
+                                {{ form.email(class="form-control form-control-lg") }}
+                            </div>
+                        </fieldset>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-12">
+                                    {{ form.submit(class="btn btn-primary btn-lg") }}
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
