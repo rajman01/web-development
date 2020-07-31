@@ -49,11 +49,11 @@ def contact():
     return render_template('contact.html', title='Contact', form=form)
 
 
-@app.errorhandler(404)
+@app.errorhandler()
 def error_404():
     return render_template('404.html'), 404
 
 
-@app.errorhandler(500)
+@app.errorhandler()
 def error_500():
     return render_template('500.html'), 500
